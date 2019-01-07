@@ -1,13 +1,12 @@
-import * as config from '../config.json';
 import { Twitter } from 'twitter-node-client';
 import redditFetch from './reddit-fetch';
 
 //these need to change to env vars for heroku
 export const twitter = new Twitter({
-    "consumerKey": process.env.API_KEY || config.APIKey,
-    "consumerSecret": process.env.API_SECRET || config.APISecret,
-    "accessToken": process.env.TOKEN || config.token,
-    "accessTokenSecret": process.env.TOKEN_SECRET || config.tokenSecret,
+    "consumerKey": process.env.API_KEY,
+    "consumerSecret": process.env.API_SECRET,
+    "accessToken": process.env.TOKEN,
+    "accessTokenSecret": process.env.TOKEN_SECRET,
     "callBackUrl": ""
 });
 
